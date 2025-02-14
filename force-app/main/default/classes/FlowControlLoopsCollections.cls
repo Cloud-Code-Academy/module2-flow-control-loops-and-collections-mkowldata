@@ -14,7 +14,7 @@
 * in flow control, loops, and collections. By mastering these concepts, developers will be able to write more
 * efficient and effective code in their Salesforce projects.
 *
-* @author Your Name
+* @author May Keam
 */
 
 public with sharing class FlowControlLoopsCollections {
@@ -29,6 +29,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return "Hello World!" if x greater than y, otherwise return null.
      */
     public static String helloWorld(Integer x, Integer y) {
+        String helloWorld = ('Hello World!');
+        if( x == null || y == null ) {
+            return null;
+        }
+        if( x <= y ){
+            return null;
+        }
+        if( x > y ){
+            return helloWorld;
+        }
         return null; // Replace null with the variable you used to store the result
     }
 
@@ -42,7 +52,14 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        return null; // Replace null with the variable you used to store the result
+        final Integer VOTING_ELIGIBILITY = 18;
+        if( age == null ){
+            return null;
+        }
+        if ( age >= VOTING_ELIGIBILITY ){
+            return true;
+        }
+        return false; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -55,10 +72,17 @@ public with sharing class FlowControlLoopsCollections {
      * @return The maximum of the two numbers, or null if either number is null.
      */
     public static Integer findMax(Integer num1, Integer num2) {
+        if( num1 == null || num2 == null ){
+            return null;
+        }
+        if( num1 == num2 ){
+            return num1;
+        }
+        Integer result = Math.max( num1, num2 );
         // Initialize largestNum as null
         Integer largestNum = null;
 
-        return null; // Replace null with the variable you used to store the result
+        return result; // Replace null with the variable you used to store the result
     }
 
 
@@ -71,7 +95,19 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Positive", "Negative", or "Zero", or null if the number is null.
      */
     public static String checkNumber(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        String positive = ('Positive');
+        String negative = ('Negative');
+        String zero = ('Zero');
+        if( a == null ){
+            return null;
+        }
+        if( a > 0 ){
+            return positive;
+        }
+        if( a == 0 ){
+            return zero;
+        }
+        return negative; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -83,7 +119,15 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Even" or "Odd", or null if the number is null.
      */
     public static String checkEvenOdd(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        String even = ('Even');
+        String odd = ('Odd');
+        if( a == null ){
+            return null;
+        }
+        if( Math.mod ( a, 2 ) == 0 ){
+            return even;
+        }
+        return odd; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -94,7 +138,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the input is "Empty", "Null", or "Contains Text".
      */
     public static String checkString(String a) {
-        return null; // Replace null with the variable you used to store the result
+        String empty = 'Empty';
+        String notIntiated = 'Null';
+        String text = 'Contains Text';
+        if ( a == null ) {
+            return notIntiated;
+        }
+        if ( a == ('') ){
+            return empty;
+        }
+        return text; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -110,7 +163,20 @@ public with sharing class FlowControlLoopsCollections {
      * @return The grade for the given score.
      */
     public static String determineGrade(Integer score) {
-        return null; // Replace null with the variable you used to store the result
+        String a = ('A'), b = ('B'), c = ('C'), d = ('D'), f = ('F');
+        if( score >= 90 ){
+            return a;
+        }
+        if( score >= 80 && score < 90 ){
+            return b;
+        }
+        if( score >= 70 && score < 80 ){
+            return c;
+        }
+        if( score >= 60 && score < 70 ){
+            return d;
+        }
+        return f; // Replace null with the variable you used to store the result
     }
 
 
@@ -122,14 +188,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return The sum of all integers up to the limit.
      */
     public static Integer sumUpToLimit(Integer intLimit) {
-        /* 
-         for (){
-            
-         }
-        */
-
-        return null; // Replace null with the variable you used to store the result
-    }
+        Integer sum = 0;
+        if( intLimit == null ){
+            return null;
+        }
+        for ( Integer i = 1; i <= intLimit; i++ ){
+            sum += i;
+        }
+        return sum;   // Replace null with the variable you used to store the result 
+        }
+        
 
     /**
      * Question 9
@@ -139,15 +207,15 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static String returnHelloWorld() {
         // Initialize the result String
-
+        String threeStrings = ('');
+        String addText = ('Hello World!; ');
+        
         // Use a for loop to append 'Hello World!;' to the result string three times
-        /* 
-         for (){
-            
+        
+         for ( Integer i = 0; i <= 2; i++ ){
+            threeStrings += addText; 
          }
-        */
-
-        return null; // Replace null with the variable you used to store the result
+        return threeStrings; // Replace null with the variable you used to store the result
     }
 
     /**
