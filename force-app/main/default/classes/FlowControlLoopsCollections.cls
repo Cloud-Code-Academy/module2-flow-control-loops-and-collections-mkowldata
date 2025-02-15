@@ -163,7 +163,11 @@ public with sharing class FlowControlLoopsCollections {
      * @return The grade for the given score.
      */
     public static String determineGrade(Integer score) {
-        String a = ('A'), b = ('B'), c = ('C'), d = ('D'), f = ('F');
+        String a = ('A');
+        String b = ('B');
+        String c = ('C');
+        String d = ('D');
+        String f = ('F');
         if( score >= 90 ){
             return a;
         }
@@ -227,20 +231,23 @@ public with sharing class FlowControlLoopsCollections {
      * @param inputString The string to be repeated.
      * @param repeatCount The number of times the string should be repeated.
      * @return The new string with the inputString repeated repeatCount times.
-     */
+     **/
+
     public static String repeatString(String inputString, Integer repeatCount) {
         // Initialize the result String
+        String repeatedString = ('');
 
         // Use a for loop to append the inputString to the result string repeatCount times
-        /*
-        for () {
-
-            // If it is not the last iteration, add a semicolon to separate the strings
+        
+        for ( Integer i = 0; i < repeatCount; i++ ){
+            repeatedString += inputString;
+            if( i < repeatCount -1 ){
+            repeatedString  += '; ';
+        // If it is not the last iteration, add a semicolon to separate the strings
         }
-        */
-
+        }
         // Return the final result string
-        return null; // Replace null with the variable you used to store the result
+        return repeatedString; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -251,14 +258,15 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static List<Integer> createAndPopulateList() {
         // Create a new list of integers
+        List <Integer> myNumbers = new List <Integer>();
 
         // Add the integers 1, 2, and 3 to the list
-        // add 1
-        // add 2
-        // add 3
+        myNumbers.add (1);
+        myNumbers.add (2);
+        myNumbers.add (3);
 
         // Return the populated list
-        return null; // Replace null with the variable you used to store the result
+        return myNumbers; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -272,9 +280,10 @@ public with sharing class FlowControlLoopsCollections {
         List<Integer> numberList = new List<Integer>{1, 2, 3, 4, 5}; //DO NOT CHANGE
 
         // Remove the 3rd element (number 3) from the list
-        
+        numberList.remove(2);
+
         // Return the updated list
-        return null; // Replace null with the variable you used to store the result
+        return numberLIst; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -286,14 +295,16 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static List<Integer> createIntegerList(Integer n) {
         // Create a new list of integers 
-
-        /*
-        for() {
+        
+        List <Integer> listOfInts = new List <Integer>();
+        
+        Integer listSize = n;
+        
+        for(Integer i = 1; i <= n; i++) {
+            listOfInts.add(i);
             //add integer to the list
         }
-        */ 
-
-        return null; // Replace null with the variable you used to store the result
+        return listOfInts; // Replace null with the variable you used to store the result
     }
 
     /**
