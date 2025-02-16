@@ -297,9 +297,7 @@ public with sharing class FlowControlLoopsCollections {
         // Create a new list of integers 
         
         List <Integer> listOfInts = new List <Integer>();
-        
-        Integer listSize = n;
-        
+                
         for(Integer i = 1; i <= n; i++) {
             listOfInts.add(i);
             //add integer to the list
@@ -316,12 +314,14 @@ public with sharing class FlowControlLoopsCollections {
      * @return A Set of unique strings.
      */
     public static Set<String> createStringSet(List<String> inputList) {
+
         // Create a new Set of strings
-        Set<String> stringSet = new Set<String>();
+
+        Set<String> stringSet = new Set<String>(inputList);
 
         //add strings to the set
 
-        return null; // Replace null with the variable you used to store the result
+        return stringSet; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -333,11 +333,18 @@ public with sharing class FlowControlLoopsCollections {
     public static Integer sumPositiveIntegers() {
         List<Integer> numbers = new List<Integer>{-1, 2, -3, 4, -5, 6}; //DO NOT CHANGE
 
+        Integer sum = 0;
+        for( Integer num : numbers ){
+        if( num >= 0 ){
+            sum += num;
+        }
+        if( num < 0 ){
+            continue;        
         // Loop through the list of integers
-            // if the number is negative skip this iteration
-        
-
-        return null; // Replace null with the variable you used to store the result
+        // if the number is negative skip this iteration
+        }    
+        }
+        return sum; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -349,12 +356,18 @@ public with sharing class FlowControlLoopsCollections {
      * @return The position of the word in the list as a string or -1 if the word was not found.
      */
     public static Integer findWordInList(String wordToFind, List<String> words) {
+        
+        Integer pos = -1;
         // The variable to store the index of the word
 
+        for( String str : words ){
+            if( str == wordToFind){
+            pos = words.indexOf(str);
+            }
+        }
         // Loop through the list of words
             // If the current word is the word to find, exit the loop
-
-        return null; // Replace null with the variable you used to store the result
+        return pos;    // Replace null with the variable you used to store the result
     }
 
     /**
