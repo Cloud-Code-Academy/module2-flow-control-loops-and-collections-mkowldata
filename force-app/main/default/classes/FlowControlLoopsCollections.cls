@@ -381,7 +381,14 @@ public with sharing class FlowControlLoopsCollections {
         // The list of money in the wallet, represented in dollars and cents
         List<Decimal> moneyInWallet = new List<Decimal>{0.50, 10, 3.84, 24.60, 9.08, 50, 4.90}; //DO NOT CHANGE
 
-        return null; // Replace null with the variable you used to store the result
+        Decimal total = 0.0;
+        for( Decimal d : moneyInWallet ){
+            total +=d;
+            if( total > 40 ){
+                break;
+            }
+        }
+        return total; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -391,8 +398,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return The Map of fruits and their quantities.
      */
     public static Map<String, Integer> addItemsToMap() {
+        
+        Map<String, Integer> myMap = new Map<String, Integer>();
         // Initialize an empty Map
-
+        
+        myMap.put('Apples', 5);
+        myMap.put('Oranges', 10);
+        myMap.put('Bananas', 15);
+        myMap.put('Pears', 20);
+        myMap.put('Grapes', 25);
+        
         // Add key-value pairs to the Map
         // add Apples => 5
         // add Oranges => 10
@@ -400,7 +415,7 @@ public with sharing class FlowControlLoopsCollections {
         // add Pears => 20
         // add Grapes => 25
 
-        return null; // Replace null with the variable you used to store the result
+        return myMap; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -413,18 +428,30 @@ public with sharing class FlowControlLoopsCollections {
      * @return The salary of the employee, or null if the employee is not found in the Map.
      */
     public static Integer getSalary(String employeeName) {
-        // Initialize a Map
+        
+        Map<String, Integer> emp = new Map<String, Integer>();
+        Integer salary;
 
+        // Initialize a Map
+        emp.put('John Doe', 50000);
+        emp.put('Jane Smith', 60000);
+        emp.put('Sam Brown', 55000);
+        emp.put('Alice Johnson', 65000);
         // Add key-value pairs to the Map
         // add John Doe => 50000
         // add Jane Smith => 60000
         // add Sam Brown => 55000
         // add Alice Johnson => 65000
 
+        if(employeeName == null){
+            return null;
+        }
+        
+        salary = emp.get(employeeName);
         // Get the salary of the employee
 
         // Return the salary of the employee, or null if the employee is not found in the Map
-        return null; // Replace null with the variable you used to store the result
+        return salary; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -438,23 +465,31 @@ public with sharing class FlowControlLoopsCollections {
      * @return A list of employee names who have a salary more than 55000.
      */
     public static List<String> getHighPaidEmployees() {
-        // Initialize a Map
-        Map<String, Integer> employeeSalaries = new Map<String, Integer>();
 
+        Map<String, Integer> employeeSalaries = new Map<String, Integer>();
+        // Initialize a Map
+        String emp = ('');
+
+        employeeSalaries.put('John Doe', 50000);
+        employeeSalaries.put('Jane Smith', 60000);
+        employeeSalaries.put('Sam Brown', 55000);
+        employeeSalaries.put('Alice Johnson', 65000);
         // Add key-value pairs to the Map
         // add John Doe => 50000
         // add Jane Smith => 60000
         // add Sam Brown => 55000
         // add Alice Johnson => 65000
 
+        List<String> highPaidEmp = new List<String>();
         // Initialize a list to store the names of high paid employees
 
-        // Iterate over the Map using a for loop
+
+// Start here ==> Iterate over the Map using a for loop
             // Check if the salary of the employee is more than 55000
                 // Add the employee to the list of high paid employees
 
         // Return the list of high paid employees
-        return null; // Replace null with the variable you used to store the result
+        return highPaidEmp; // Replace null with the variable you used to store the result
     }
 
 }
