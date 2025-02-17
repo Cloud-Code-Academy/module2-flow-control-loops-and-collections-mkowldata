@@ -468,7 +468,6 @@ public with sharing class FlowControlLoopsCollections {
 
         Map<String, Integer> employeeSalaries = new Map<String, Integer>();
         // Initialize a Map
-        String emp = ('');
 
         employeeSalaries.put('John Doe', 50000);
         employeeSalaries.put('Jane Smith', 60000);
@@ -481,15 +480,23 @@ public with sharing class FlowControlLoopsCollections {
         // add Alice Johnson => 65000
 
         List<String> highPaidEmp = new List<String>();
+        Integer highSalary = 55000;
+
         // Initialize a list to store the names of high paid employees
+        for( String emp : employeeSalaries.keySet()){
+            Integer salary = employeeSalaries.get(emp);
 
-
-// Start here ==> Iterate over the Map using a for loop
+            if(salary > highSalary) {
+                highPaidEmp.add(emp);
+            }
+        }
+        return highPaidEmp;
+            // Iterate over the Map using a for loop
             // Check if the salary of the employee is more than 55000
                 // Add the employee to the list of high paid employees
 
         // Return the list of high paid employees
-        return highPaidEmp; // Replace null with the variable you used to store the result
+        // Replace null with the variable you used to store the result
     }
 
 }
